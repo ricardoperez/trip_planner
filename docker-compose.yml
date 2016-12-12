@@ -1,0 +1,29 @@
+web:
+  build: .
+  ports:
+    - '4000:4000'
+  links:
+    - db
+  volumes:
+    - '.:/u/app'
+  environment:
+    # Required
+    - DATABASE_URL=postgres://triplanner:triplanner@192.168.99.100:5432/membership_development
+
+test:
+  build: .
+  command:
+    mix test
+  environment:
+    # Required
+    - DATABASE_URL=postgres://triplanner:triplanner@192.168.99.100:5432
+
+db:
+  image: postgres:9.4
+  ports:
+  - "5432:5432"
+  environment:
+    - POSTGRES_PASSWORD=triplanner
+    - POSTGRES_USER=triplanner
+    - POSTGRES_DB=triplanner
+
