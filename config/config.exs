@@ -29,3 +29,13 @@ config :phoenix, :generators,
   binary_id: false
 
 config :trip_planner, ecto_repos: [TripPlanner.Repo]
+
+config :guardian, Guardian,
+  allowed_algos: ["HS512"], # optional
+  verify_module: Guardian.JWT,  # optional
+  issuer: "TripPlanner",
+  ttl: { 30, :days },
+  verify_issuer: true, # optional
+  secret_key: "123123123123123",
+  serializer: TripPlanner.GuardianSerializer
+

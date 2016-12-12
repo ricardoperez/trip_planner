@@ -36,6 +36,7 @@ defmodule TripPlanner.Mixfile do
      {:phoenix_html, "~> 2.8"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.9"},
+     {:guardian, "~> 0.13.0"},
      {:cowboy, "~> 1.0"}]
   end
 
