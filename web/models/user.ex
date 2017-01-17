@@ -16,7 +16,7 @@ defmodule TripPlanner.User do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:first_name, :last_name, :email, :encrypted_password])
+    |> cast(params, [:first_name, :last_name, :email, :encrypted_password, :date_of_birth])
     |> validate_required([:first_name, :last_name, :email, :encrypted_password])
   end
 end
