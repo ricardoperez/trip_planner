@@ -5,8 +5,8 @@ defmodule TripPlanner.Repo.Migrations.CreateTask do
     create table(:tasks) do
       add :name, :string
       add :desc, :string
-      add :start, Ecto.DateTime
-      add :finish, Ecto.DateTime
+      add :start, :datetime
+      add :finish, :datetime
       add :done, :boolean, default: false
       add :location_lat, :float
       add :location_long, :float
